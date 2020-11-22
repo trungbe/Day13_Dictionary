@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<input id="search" type="text">
+<button onclick="search()">Convert</button>
+<p id="translate"></p>
+<script>
+    let arrEnglish = ['car', 'cat', 'dog', 'house', 'red'];
+    let arrVietnam = ['xe oto', 'mèo', 'chó', 'nhà','đỏ'];
+    let size = arrEnglish.length;
+
+    function search() {
+        let wordSearch = document.getElementById('search').value;
+        for (let i = 0; i < size; i++) {
+            if (wordSearch == arrEnglish[i]) {
+                document.getElementById('translate').innerHTML = arrVietnam[i];
+                break;
+            } else {
+                document.getElementById('translate').innerText = 'Không tìm thấy từ';
+            }
+        }
+    }
+</script>
+</body>
+</html>
